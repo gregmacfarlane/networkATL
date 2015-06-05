@@ -10,6 +10,7 @@ all: $(NETWORK)
 
 $(NETWORK): highway/atl_highway.xml java/bin/BuildNetwork.class
 	@echo Writing MATSim network $@ from OSM file $< ...
+	java $(CP) BuildNetwork highway/atl_highway.xml "EPSG:2818" $@
 
 highway/atl_highway.xml: osm_query/atl_query.xml
 	@echo Fetching OSM data from API Server
