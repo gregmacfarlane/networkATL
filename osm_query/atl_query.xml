@@ -1,0 +1,11 @@
+<osm-script>
+  <union into="_">
+    <query type="way">
+      <has-kv k="highway" regv="motorway|motorway-link|trunk|primary|secondary|tertiary"/>
+			<bbox-query n="33.9627" e="-84.1010" s="33.5729" w="-84.7396"/>
+    </query>  
+    <recurse into="x" type="way-node"/> 
+    <recurse type="up"/>
+  </union>
+  <print mode="meta"/>
+</osm-script>
